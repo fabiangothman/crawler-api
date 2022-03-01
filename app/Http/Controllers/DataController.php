@@ -98,6 +98,8 @@ class DataController extends Controller
     $this->data = $this->getListItems($this->url."index.html");
     //var_dump($this->data);
     return response(json_encode($this->data), 200)
-      ->header('Content-Type', 'application/json');
+      ->header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token')
+      ->header('Access-Control-Allow-Origin', '*')
+      ->header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
   }
 }
