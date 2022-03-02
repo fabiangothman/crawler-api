@@ -78,7 +78,7 @@ class DataController extends Controller
         $item->available = ($item->price=="Sold Out") ? false : true;
         $item->size = $item->available ? $this->clean($dom->getElementsByTagName('p')->item(1)->getElementsByTagName('span')->item(1)->textContent) : null;
         $item->image = $item->available ? $this->clean($dom->getElementsByTagName('p')->item(1)->getElementsByTagName('img')->item(0)->getAttribute('src')) : null;
-        $item->image = urlencode($item->image);
+        //$item->image = urlencode($item->image);
         $item->level = $level+1;
         return $item;
       }
